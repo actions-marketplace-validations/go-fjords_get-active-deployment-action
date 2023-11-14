@@ -71,7 +71,7 @@ jobs:
           environment: 'production'
 
       - name: Check first value
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         if: ${{ steps.test-action-first.outputs.deployment-sha != '91e3a21ecd1a483f917a49a972cd107b5f1009da' }}
         with:
           script: core.setFailed('Deployment SHA did not match expected value')
@@ -85,7 +85,7 @@ jobs:
           nth: 2
 
       - name: Check second value
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         if: ${{ steps.test-action-second.outputs.deployment-sha != '91e3a21ecd1a483f917a49a972cd107b5f1009da' }}
         with:
           script: core.setFailed('Deployment SHA did not match expected value')
